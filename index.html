@@ -40,7 +40,15 @@
 			font-style: italic;
 			color: #c8a2c8;
 		}
-		
+		#eng,#rus,#uk{
+            width: 140px;
+            height: 50px;
+            display: none;
+        }
+        img {
+            height: 100%;
+            width: 49%;
+        }
     </style>
 </head>
 <body>
@@ -51,7 +59,10 @@
 
         </div>
     </div>
-    <p id="Name">Zahorui Aliesia</p>
+    <p id="Name">Zahorui Aliesia<span id="flagContainer">
+        <div id="eng" style="display: block"><img src="USA.png" alt="usa"><img src="США.jpg" alt="сша"></div>
+        <div id="uk"><img src="UKR.png" alt="ukr"><img src="УКР.png" alt="укр"></div>
+        <div id="rus"><img src="RUS.png" alt="rus"><img src="РУС.jpg" alt="рус"></div></span></p>
     <select name="change language" id="languageChange">
         <option value="1">English</option>
         <option value="2">Українська</option>
@@ -64,10 +75,19 @@
         list.addEventListener("change",function () {
             if (list.value == 1){
                 Name.innerText = "Zahorui Aliesia";
+                document.getElementById("eng").style.display = "block";
+                document.getElementById("uk").style.display = "none";
+                document.getElementById("rus").style.display = "none";
             } else if (list.value == 2){
-                Name.innerText = "Загоруй Алєся"; 
+                Name.innerText = "Загоруй Алєся";
+                document.getElementById("eng").style.display = "none";
+                document.getElementById("uk").style.display = "block";
+                document.getElementById("rus").style.display = "none";
             } else if (list.value == 3){
-                Name.innerText = "Загоруй Алеся"; 
+                Name.innerText = "Загоруй Алеся";
+                document.getElementById("eng").style.display = "none";
+                document.getElementById("uk").style.display = "none";
+                document.getElementById("rus").style.display = "block";
             }
 			
 		}
